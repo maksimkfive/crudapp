@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Note</title>
+</head>
+<body>
+<p th:text="${note.getNote()}">NOTE</p> <!-- Отображение содержимого заметки -->
+<p th:text="${note.getId()}">ID</p> <!-- Отображение идентификатора заметки -->
+<a th:href="@{/notes/{id}/edit(id=${note.getId()})}">Edit</a> <!-- Ссылка для редактирования заметки -->
+<form th:method="DELETE" th:action="@{/notes/{id}(id=${note.getId})}">
+    <input type="submit" value="Delete"/> <!-- Форма для удаления заметки -->
+</form>
+
+</body>
+</html>
